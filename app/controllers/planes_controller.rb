@@ -4,15 +4,15 @@ class PlanesController < ApplicationController
   end
 
   def show
-
+    @plane = Plane.find(params[:id])
   end
 
   def new
-
+    @plane = Plane.new
   end
 
   def create
-
+    @plane = Plane.create(params)
   end
 
   def edit
