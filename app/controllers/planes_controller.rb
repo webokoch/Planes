@@ -1,10 +1,10 @@
 class PlanesController < ApplicationController
+  before_action :find_restaurant, only: [:show, :edit, :update, :destroy]
   def index
     @planes = Plane.all
   end
 
   def show
-    @plane = Plane.find(params[:id])
   end
 
   def new
@@ -18,17 +18,14 @@ class PlanesController < ApplicationController
   end
 
   def edit
-    @plane = Plane.find(params[:id])
   end
 
   def update
-    @plane = Plane.find(params[:id])
     @plane.update(plane_params)
     redirect_to plane_path(@plane), notice: 'Airliner was successfully updated!'
   end
 
   def destroy
-    @plane = Plane.find(params[:id])
     @plane.destroy
     redirect_to planes_path, notice: 'Airliner was successfully deleted!'
   end
@@ -37,5 +34,9 @@ class PlanesController < ApplicationController
   def plane_params
     params.require(:plane).permit(:name, :manufactor, :range, :engines,
       :aircraft_type, :passengers)
+  end
+
+  def find_restaurant
+    @plane = Plane.find(params[:id])
   end
 end
