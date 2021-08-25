@@ -15,5 +15,7 @@ p2 = Plane.create(name: '340-300', manufactor: 'Airbus', engines: 4, passengers:
               aircraft_type: "Heavy", range: 13500)
 p3 = Plane.create(name: 'E190-E2', manufactor: 'Embraer', engines: 2, passengers: 114,
               aircraft_type: 'Medium', range: 5280)
+p3 = Plane.create(name: 'A380-800', manufactor: 'Airbus', engines: 4, passengers: 868,
+              aircraft_type: 'Super', range: 15200)
 
 puts  'planes created'
