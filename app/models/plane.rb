@@ -1,5 +1,5 @@
 class Plane < ApplicationRecord
-  validates :name, presence: true
+  validates :name, uniqueness: true, presence: true
   validates :manufactor, presence: true
   validates :aircraft_type, presence: true,
     inclusion: { in: %w(Super Heavy Medium Light) }

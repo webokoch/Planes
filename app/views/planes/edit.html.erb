@@ -1,0 +1,17 @@
+<h1>Update the  <%= @plane.manufactor %> <%= @plane.name %></h1>
+
+<%= form_for @plane do |f| -%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :manufactor %>
+  <%= f.text_field :manufactor %>
+  <%= f.label :aircraft_type %>
+  <%= f.select :aircraft_type, %w(Super Heavy Medium Light) %>
+  <%= f.label :passengers %>
+  <%= f.number_field :passengers %>
+  <%= f.label :range %>
+  <%= f.number_field :range %>
+  <%= f.label :engines %>
+  <%= f.select :engines, [1, 2, 3, 4] %>
+  <%= f.submit %>
+<% end %>
