@@ -4,3 +4,14 @@
 <h3>Capacity: <%= @plane.passengers %> </h3>
 <h3>Range: <%= @plane.range %> km </h3>
 <h3>Engines: <%= @plane.engines %> </h3>
+
+<p id="notice"><%= notice %></p>
+
+
+<h2> <%= link_to "Back to all Airliners", planes_path %> </h2>
+
+<h2>  <%= link_to "Update", edit_plane_path(@plane) %> </h2>
+
+
+<h2>  <%= link_to "🚮", plane_path(@plane), method: :delete, data: {
+  confirm: "Do you really want to delete the plane?" } %> </h2>

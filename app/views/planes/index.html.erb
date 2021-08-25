@@ -1,5 +1,9 @@
 <h1>All Airliners</h1>
 
 <% @planes.each do |plane| %>
-  <h5> <%= plane.name %> </h5>
+  <h5> <%= link_to plane.name,  plane_path(plane) %> </h5>
 <% end %>
+
+<p id="notice"><%= notice %></p>
+
+<h3>  <%= link_to "Add an Airliner", new_plane_path %> </h3>

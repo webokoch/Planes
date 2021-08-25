@@ -14,7 +14,7 @@ class PlanesController < ApplicationController
   def create
     @plane = Plane.new(plane_params)
     @plane.save
-    redirect_to plane_path(@plane)
+    redirect_to plane_path(@plane), notice: 'Airliner was successfully added!'
   end
 
   def edit
@@ -24,20 +24,18 @@ class PlanesController < ApplicationController
   def update
     @plane = Plane.find(params[:id])
     @plane.update(plane_params)
-    redirect_to plane_path(@plane)
+    redirect_to plane_path(@plane), notice: 'Airliner was successfully updated!'
   end
 
   def destroy
     @plane = Plane.find(params[:id])
     @plane.destroy
-    redirect_to planes_path
+    redirect_to planes_path, notice: 'Airliner was successfully deleted!'
   end
 
   private
-
   def plane_params
     params.require(:plane).permit(:name, :manufactor, :range, :engines,
       :aircraft_type, :passengers)
   end
-
 end
